@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to the shop</h1>
+    
+    <form action="/search" method= "post">
+        Name <input type="text" name="txtName"/>
+         <input type="submit" value="Search"> 
+    </form>
+    <a href="/insert">Document</a>
+    <div class="menu">
+
+    </div>
+    <table width="50%" border="1">
+        <tr>
+            <a class="btn_index" href="/insert"><input type="submit" id="btn" value="ADD"
+            </a>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Delete</td>
+            <td>Update</td>
+        </tr>    
+         {{# each model}}
+         <tr>
+        <td>{{name}}</td> <td>{{price}}</td>
+        <td><a href="/delete?id={{_id}}">Delete</a></td>
+       <td><a href="/edit?id={{_id}}">Edit</a></td>
+        </tr>
+        {{/each}}
+
+    </table>
+</body>
+</html>
